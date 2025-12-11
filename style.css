@@ -5,3 +5,17 @@ h1 {
     text-transform: capitalize;
     
 }
+.auteur img {
+    float: left;
+    padding: 10px;
+    
+}
+
+.auteur p{
+    margin: 20px;
+
+}
+.table1 td{
+    border: 2px solid black;
+    padding: 4px;
+}
