@@ -1,12 +1,175 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Logo et navigation -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <p class="logo">TED</p>
+            <!-- Navigation -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="accueil.html" >Accueil</a></li>
+                    <li><a href="auteur.html">Auteur</a></li>
+                    <li><a href="contact.html" class="menu-active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1>Contactez-nous</h1>
+            <!-- Formulaire de contact avec 5 types de champs différents -->
+                <form method="post" action="#">
+                    <fieldset>
+                        <legend>Informations personnelles</legend>
+                        
+                        <!-- texte (input type="text") -->
+                        <div class="form-group">
+                            <label for="nom">Nom <abbr>*</abbr></label>
+                            <input 
+                                type="text" 
+                                id="nom" 
+                                name="nom" 
+                                required
+                                placeholder="Votre nom">
+                        </div>
     
+                        <!-- email (input type="email") -->
+                        <div class="form-group">
+                            <label for="email">Adresse email <abbr>*</abbr></label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                placeholder="exemple@email.com">
+                        </div>
+    
+                        <!-- téléphone (input type="tel") -->
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input 
+                                type="tel" 
+                                id="telephone" 
+                                name="telephone"
+                                placeholder="+33 1 23 45 67 89">
+                        </div>
+    
+                        <!-- date (input type="date") -->
+                        <div class="form-group">
+                            <label for="date-contact">Date de contact souhaitée</label>
+                            <input 
+                                type="date" 
+                                id="date-contact" 
+                                name="date-contact">
+                        </div>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Votre message</legend>
+                        
+                        <!-- Zone de texte (textarea) -->
+                        <div class="form-group">
+                            <label for="message">Message <abbr>*</abbr></label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="8"
+                                cols="8"
+                                placeholder="Écrivez votre message ici..."
+                                required></textarea>
+                        </div>
+    
+                        <!-- Liste (select) -->
+                        <div class="form-group">
+                            <label for="sujet">Sujet de votre demande</label>
+                            <select id="sujet" name="sujet">
+                                <option value="">-- Sélectionnez un sujet --</option>
+                                <option value="info">Demande d'information</option>
+                                <option value="conference">Questions sur la conférence</option>
+                                <option value="design">Design à grande échelle</option>
+                                <option value="auteur">Margaret Gould Stewart</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+    
+                        <!-- Cases à cocher (checkbox) -->
+                        <div class="form-group checkbox-group">
+                            <fieldset>
+                                <legend>Centres d'intérêt</legend>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="interet-ux" name="interets" value="ux">
+                                    <label for="interet-ux">Design UX/UI</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="interet-web" name="interets" value="web">
+                                    <label for="interet-web">Développement web</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="interet-accessibilite" name="interets" value="accessibilite">
+                                    <label for="interet-accessibilite">Accessibilité</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="interet-tech" name="interets" value="tech">
+                                    <label for="interet-tech">Technologie</label>
+                                </div>
+                            </fieldset>
+                        </div>
+    
+                        <!-- radio (radio) -->
+                        <div class="form-group radio-group">
+                            <fieldset>
+                                <legend>Comment avez-vous découvert ce site ? <abbr>*</abbr></legend>
+                                <div class="radio-item">
+                                    <input type="radio" id="decouverte-recherche" name="decouverte" value="recherche" required>
+                                    <label for="decouverte-recherche">Recherche en ligne</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="decouverte-reseau" name="decouverte" value="reseau">
+                                    <label for="decouverte-reseau">Réseaux sociaux</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="decouverte-recommandation" name="decouverte" value="recommandation">
+                                    <label for="decouverte-recommandation">Recommandation</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="decouverte-autre" name="decouverte" value="autre">
+                                    <label for="decouverte-autre">Autre</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </fieldset>
+    
+                    <!-- Bouton de submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Submit</button>
+                        <button type="reset" class="btn-reset">Réinitialiser</button>
+                    </div>
+                </form>
+
+        </section>
+    </main>
+    <!-- Pied de page -->
+    <footer>
+        <div class="info-site">
+            <p>&copy; 2025 Site de conférence TED. Projet - Conception de sites Web.</p>
+            <p>Contenu de la conférence TED "Comment les géants de l'Internet conçoivent pour vous (et un milliard d'autres)" par Margaret Gould Stewart</p>
+        </div>
+        <div class="info-etudiants">
+            <p >Address :</p>
+            <address > Université Lumière Lyon 2 </address>
+            <p> Email Zaki : <a href="mailto:zakitafiani@gmail.com">zakitafiani@gmail.com</a></p>
+            <p> Email Omran : <a href="mailto:omransoliman@gmai.com">omransoliman@gmail.com</a></p>
+        </div>
+    </footer>
 </body>
 </html>

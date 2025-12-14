@@ -1,21 +1,425 @@
+/* Variables globales du site */
+:root {
+    --primary-color: #e62b1e;
+    --secondary-color: #2c3e50;
+    --text-color: #333333;
+    --text-meuted-color: #666;
+    --bg-color: #ffffff;
+    --light-bg: #FAFCFD;
+    --border-color: #dee2e6;
+    --link-color: #0066cc;
+    --link-hover: #e62b1e;
+    --menu-hover: #ffffff1a;
+    --font-main: 'Arial', 'Helvetica', sans-serif;
+    --font-heading: 'Georgia', 'Times New Roman', serif;
+    --max-width: 1200px;
+    --spacing: 1.5rem;
+    --font-text-size: 1rem;
+    --font-small-text: 0.9rem;
+    --font-big-text: 2rem;
+    --font-h1-size: 1.9rem;
+    --font-h2-size: 1.8rem;
+    --font-nav-size: 1.5rem;
+}
+
 * {
-    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1 {
-    text-transform: capitalize;
-    
+
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-text-size);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex; /* Transforme le corps en un conteneur flexible, permettant un agencement flexible des éléments enfants. */
+    flex-direction: column; /* Empile verticalement les éléments enfants (en-tête, contenu principal, pied de page, etc.). */
+    max-width: 100%;  
 }
-.auteur img {
+
+/* Style général pour h2 */
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-h2-size);
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+
+/* Logo et Navigation */
+
+header{
+    background-color: var(--secondary-color);
+    color: white;
+    position: fixed;
+    width:100%;
+}
+
+.header-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: var(--font-h1-size);
+    font-weight: bold;
+    color: red;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.menu li {
+    margin: 0;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.menu a:hover {
+    background-color: var(--menu-hover);
+}
+.menu-active {
+    background-color: var(--primary-color);
+}
+
+/* Main page */
+main{
+    margin-top: 9rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width:75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Accueil Page  */
+
+/* Hero */
+.hero {
+    text-align: center;
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-big-text);
+    color: var(--secondary-color);
+}
+.hero p {
+    color: var(--text-meuted-color);
+    font-size: var(--font-h2-size);
+}
+
+/* Video */
+.video {
+    display: flex;
+    flex-direction: column;
+}
+.video p { 
+    text-align: center;
+    font-size: var(--font-small-text);
+    color: var(--text-meuted-color);
+    font-style: italic;
+}
+.video-div {
+    text-align: center;
+}
+
+.resume {
+    margin-top: 1rem;
+}
+.resume img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;;
+}
+.resume h2{
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.resume h3{
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.resume p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Blockquote */
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+blockquote p {
+    text-align: left;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    font-size: var(--font-small-text);
+    color: var(--text-meuted-color);
+    font-style: normal;
+}
+
+/* Foreign text */
+.foreign-text {
+    background-color: #fff3cd;
+    padding: 1rem;
+    border-left: 4px solid #ffc107;
+    font-style: italic;
+}
+
+
+
+
+/* Auture Page */
+
+.auteur img{
+    width: 240px;
+    height: 200px;
+    margin-bottom: 1rem;;
     float: left;
-    padding: 10px;
-    
+    margin-right: 1rem;
 }
 
-.auteur p{
-    margin: 20px;
-
+.auteur p {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: justify;
 }
-.table1 td{
-    border: 2px solid black;
-    padding: 4px;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+caption {
+    font-weight: bold;
+    font-size: var(--font-text-size);
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: var(--secondary-color);
+}
+thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+tbody th {
+    background-color: var(--light-bg);
+    font-weight: bold;
+    text-align: left;
+}
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+tfoot {
+    background-color: var(--light-bg);
+    font-size: var(--font-small-text);
+    font-style: italic;
+    color: var(--text-meuted-color);
+}
+tfoot a{
+    color: #0066cc;
+    text-decoration: none;
+}
+tfoot a:hover{
+    color: var(--primary-color);
+}
+
+.coordonnees ul{
+    margin-left: 1.5rem;
+}
+.coordonnees a{
+    color: #0066cc;
+    text-decoration: none;
+}
+.coordonnees a:hover{
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+
+/* Contact Page */
+section h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-big-text);
+    color: var(--secondary-color);
+}
+
+fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--light-bg);
+}
+legend {
+    font-weight: bold;
+    font-size: var(--font-text-size);
+    color: var(--secondary-color);
+    padding: 1rem;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+abbr{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-size: var(--font-text-size);
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+textarea {
+    resize: vertical;
+}
+
+/* Checkbox & radio */
+.checkbox-group legend,
+.radio-group legend {
+    font-size: var(--font-text-size);
+    margin-bottom: 0.75rem;
+}
+.checkbox-item,
+.radio-item {
+    display: flex;
+    align-items: center;
+}
+.checkbox-item input,
+.radio-item input {
+    width: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.checkbox-item label,
+.radio-item label {
+    display: inline;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+button {
+    padding: 0.75rem;
+    font-size: var(--font-text-size);
+    font-family: var(--font-main);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+.btn-submit:hover {
+    background-color: #c5221f;
+}
+
+.btn-reset {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-reset:hover {
+    background-color: #5a6268;
+}
+
+
+
+
+
+/* Pied de page */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem var(--spacing);
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+.info-etudiants {
+    flex: 1;
+    max-width: 30%;
+}
+.info-etudiants p, address{
+    text-align: left;
+}
+.info-site {
+    flex: 1;
+    max-width: 70%;
+    border-right: 1px solid var(--border-color);
+}
+.info-site p{
+    text-align: left;
 }
